@@ -1,5 +1,12 @@
+#include <stdlib.h>
+#include "../include/List.h"
 
+List List_init(int n){
+    List p;
+    p.value = n;
+    p.next = NULL; 
+    return p;
+}
 
-int main(){
-    return 0;
+void Lista_add(int n, List node){
 }
