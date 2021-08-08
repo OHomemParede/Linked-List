@@ -23,10 +23,11 @@ List* List_append(CONTENT_TYPE n, List* node);
 
 
 /**
- *  Remove node from list k.
- *  Return 1 if success, 0 if failure.
+ *  Remove node from list k. 
+ *  If node == k, return a pointer to k->next and remove node.
+ *  Else: return a new head for the node.
  */
-int List_remove(List *node, List *k);
+List *List_remove(List *node, List *k);
 
 
 /**
