@@ -22,15 +22,25 @@ List* List_append(CONTENT_TYPE n, List *node){
 }
 
 
-int List_remove(List *node, List *k){
-    while(k->next != node){
+List *List_remove(List *node, List *k){
+    List *head = k;
+    if(k == node){
+        List *p;
+        p = k->next;
+        free(node);
+        return p;
+    }
+    while(1){
+        if(k->next == node){
+            k->next = node->next;
+            free(node);
+            return k;
+        }
         if(k->next == _NULL_)
-            return 0;
+            return head;
+        
         k = k->next;
     }
-    k->next = node->next;
-    free(node);
-    return 1;
 }
 
 
