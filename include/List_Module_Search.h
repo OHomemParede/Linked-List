@@ -4,14 +4,8 @@
 #include "List_Core.h"
 
 /**
- *  Find and return the lowest value.
+ * Find and return a address to the node of the first occurrence of a specific value n in list k.
  */ 
-int List_min(List node);
-
-
-/**
- * Find and return the first occurrence of the specific value.
- */ 
-int List_find(CONTENT_TYPE n);
+List *List_find(CONTENT_TYPE n, List *k);
 
 #endif
