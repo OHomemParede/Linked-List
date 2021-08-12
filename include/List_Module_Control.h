@@ -17,13 +17,13 @@ CONTENT_TYPE *List_list2vector(List* k);
 
 
 /**
- *  Take a List and return a pointer to the node with minimum value.
+ *  Take a List and return the minimum value node's address.
  */
 List *List_min(List *k);
 
 
 /**
- *  Take a List and return a pointer to the node with maximum value.
+ *  Take a List and return the maximum value node's address.
  */
 List *List_max(List *k);
 
