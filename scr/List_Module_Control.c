@@ -3,7 +3,7 @@
 #include "../include/List_Module_Control.h"
 
 
-List *List_vector2list(CONTENT_TYPE *vector, int vector_size){
+List *List_vector2list(CONTENT_TYPE *vector, unsigned int vector_size){
     unsigned int a;
     List *k = List_init(0);
     for(a=0; a<vector_size; a++){
