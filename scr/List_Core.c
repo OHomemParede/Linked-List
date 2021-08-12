@@ -2,10 +2,8 @@
 #include <stdlib.h>
 #include "../include/List_Core.h"
 
-#define _NULL_ ((void *)0)
 
-
-List* List_init(CONTENT_TYPE n){
+List *List_init(CONTENT_TYPE n){
     List *cell;
     cell = malloc(sizeof(List));
     cell->content = n;
@@ -14,7 +12,7 @@ List* List_init(CONTENT_TYPE n){
 }
 
 
-List* List_append(CONTENT_TYPE n, List *node){
+List *List_append(CONTENT_TYPE n, List *node){
     List *cell;
     cell = List_init(n);
     cell->next = node;
@@ -50,6 +48,8 @@ void List_update(CONTENT_TYPE n, List *node){
 
 
 void List_print(List *node){
+    if(node == NULL)
+        printf("* empty *\n");
     printf("[");
     while(1){
         if(node->next == _NULL_){
