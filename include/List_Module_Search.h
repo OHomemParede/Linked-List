@@ -4,7 +4,8 @@
 #include "List_Core.h"
 
 /**
- * Find and return a address to the node of the first occurrence of a specific value n in list k.
+ * Find the first occurrence of a specific value n in list k.
+ * Return node's address.
  */ 
 List *List_find(CONTENT_TYPE n, List *k);
 
