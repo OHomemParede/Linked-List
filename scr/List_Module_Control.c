@@ -65,6 +65,9 @@ short List_comparison(List *a, List *b){
         if(a->content != b->content)
             return 0;
         
+        if((a->next==NULL || b->next==NULL) && !(a->next==NULL && b->next==NULL))
+            return 0;
+        
         if(a->next==NULL && b->next==NULL)
             return 1;
 
