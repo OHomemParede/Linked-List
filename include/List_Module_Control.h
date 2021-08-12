@@ -6,7 +6,7 @@
 /**
  * Take a vector and return a List with its contents.
  */
-List *List_vector2list(CONTENT_TYPE *vector, int vector_size);
+List *List_vector2list(CONTENT_TYPE *vector, unsigned int vector_size);
 
 
 /**
