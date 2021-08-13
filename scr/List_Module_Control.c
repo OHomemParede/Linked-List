@@ -15,7 +15,7 @@ List *List_vector2list(CONTENT_TYPE *vector, unsigned int vector_size){
 }
 
 
-CONTENT_TYPE *List_list2vector(List* k){
+CONTENT_TYPE *List_list2vector(List *k){
     CONTENT_TYPE *v;
     v = malloc(sizeof(CONTENT_TYPE) * List_size(k));
     unsigned int a=0;

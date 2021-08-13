@@ -9,4 +9,5 @@ List *List_find(CONTENT_TYPE n, List *k){
         else
             k = k->next;
     }
+    return  _NULL_;
 }

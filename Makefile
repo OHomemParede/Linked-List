@@ -1,25 +1,18 @@
 CC=gcc
+FLAG=-g -Wall
 DIR_SCR=./scr/
 DIR_OBJ=./obj/
+DEPENDECIES=List_Core.o List_Module_Control.o List_Module_Search.o
 
 
-List_Module_Control.o: $(DIR_SCR)List_Module_Control.c
-	$(CC) -c $^ -o $(DIR_OBJ)$@
+%.o: $(DIR_SCR)%.c
+	$(CC) $(FLAG) -c $^ -o $(DIR_OBJ)$@
 
 
-List_Core.o: $(DIR_SCR)List_Core.c
-	$(CC) -c $^ -o $(DIR_OBJ)$@
-
-
-list_test.o: $(DIR_SCR)list_test.c
-	$(CC) -c $^ -o $(DIR_OBJ)$@
-
-
-test: List_Core.o list_test.o List_Module_Control.o
-	$(CC) $(DIR_OBJ)List_Core.o  $(DIR_OBJ)list_test.o $(DIR_OBJ)List_Module_Control.o -o ./bin/$@
-	.\bin\test.exe
+build: $(DEPENDECIES)
 
 
 clean:
-	del .\obj\*.o
+	del *.o || rm -f *.o
+	del .\obj\*.o || rm -f ./obj/*.o
 	

@@ -5,7 +5,7 @@
 
 /**
  * Find the first occurrence of a specific value n in list k.
- * Return node's address.
+ * if success return node's address, else return NULL
  */ 
 List *List_find(CONTENT_TYPE n, List *k);
 
