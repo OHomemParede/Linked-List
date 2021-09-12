@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "../include/Core.h"
 #include "../include/add_on.h"
@@ -51,8 +52,8 @@ List* List_max(List* k){
 }
 
 
-unsigned int List_size(List* k){
-    unsigned int size = 0;
+unsigned long List_size(List* k){
+    unsigned long size = 0;
     while(k != NULL){
         size++;
         k = k->next;
@@ -112,6 +113,47 @@ List* List_find(CONTENT_TYPE n, List* k){
 }
 
 
-List* List_binarySearch(CONTENT_TYPE n, List* k){
-    
+List* List_binarySearch(CONTENT_TYPE n, List* k){    
+    unsigned long min, max, walk, index;
+    List* head = k;
+    max = List_size(k);
+    max = max -1;       
+    min = 0;            
+
+    // walk is not my middle point index, but how much do I have to 'walk' to get there.
+    walk = (max - min)/2;
+    while(k != NULL){
+
+        if(max < min)
+            return NULL;
+        
+        // since index = 0, repet the loop `walk` times. --> k[min + walk] 
+        for(index=0; index<walk; index++)
+            k = k->next;
+        
+        
+        if(k->content == n)
+            return k;
+        
+        else if(max <= min)
+            return NULL;
+        
+        if(max == min)
+            return NULL;
+        
+        if(n > k->content){
+            min = min + walk+1;
+            walk = (max - min)/2;
+            k = k->next;
+        }
+                
+        else if(n < k->content){
+            max = min + walk-1;
+            k = head;
+            for(index=0; index<min; index++)
+                k = k->next;
+            walk = (max - min)/2;
+        }
+    }
+    return NULL;
 }

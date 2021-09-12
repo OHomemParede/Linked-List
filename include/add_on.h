@@ -1,3 +1,8 @@
+/**
+ * This is an optional file. 
+ * It contains some auxiliary functions.
+ */
+
 #ifndef LIST_CONTROL_H
 #define LIST_CONTROL_H
 
@@ -31,8 +36,9 @@ List* List_max(List* k);
 
 /**
  *  Take a List and return its size.
+ *  The return value is in the range: [0, 4,294,967,295] `unsigned long`.
  */
-unsigned int List_size(List* k);
+unsigned long List_size(List* k);
 
 
 /**
@@ -67,7 +73,7 @@ List* List_find(CONTENT_TYPE n, List* k);
 /**
  *  Implementation of the binary search algorithm.
  *  List ´k´ must be sorted by ascending order.
- *  if success return node's address, else return NULL
+ *  if success returns the address of the node, else return NULL
  */
 List* List_binarySearch(CONTENT_TYPE n, List* k);
 
