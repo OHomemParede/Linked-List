@@ -1,3 +1,8 @@
+/**
+ * This is the main file. 
+ * It contains the basic definitions, functions and structure.
+ */
+
 #ifndef LIST_CORE_H
 #define LIST_CORE_H
 

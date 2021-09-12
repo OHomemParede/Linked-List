@@ -1,12 +1,12 @@
 CC=gcc
 FLAG=-g -Wall
-DIR_SCR=./scr/
-DIR_OBJ=./obj/
-DEPENDECIES=List_Core.o List_Module_Control.o List_Module_Search.o
+SRC_PATH=./scr/
+OBJ_PATH=./obj/
+DEPENDECIES=core.o add_on.o sort.o
 
 
-%.o: $(DIR_SCR)%.c
-	$(CC) $(FLAG) -c $^ -o $(DIR_OBJ)$@
+%.o: $(SRC_PATH)%.c
+	$(CC) $(FLAG) -c $^ -o $(OBJ_PATH)$@
 
 
 build: $(DEPENDECIES)
