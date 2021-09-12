@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../include/List_Core.h"
+#include "../include/core.h"
 
 
 List* List_init(CONTENT_TYPE n){

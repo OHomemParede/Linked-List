@@ -1,6 +1,6 @@
 #include <stdlib.h>
-#include "../include/List_Core.h"
-#include "../include/List_Module_Control.h"
+#include "../include/Core.h"
+#include "../include/add_on.h"
 
 
 List* List_vectorToList(CONTENT_TYPE* vector, unsigned long vector_size){
@@ -98,4 +98,20 @@ void List_free(List *k){
         free(k);
         k = p;
     }   
+}
+
+
+List* List_find(CONTENT_TYPE n, List* k){
+    while(k != _NULL_){
+        if(k->content == n)
+            return k;
+        else
+            k = k->next;
+    }
+    return  _NULL_;
+}
+
+
+List* List_binarySearch(CONTENT_TYPE n, List* k){
+    
 }

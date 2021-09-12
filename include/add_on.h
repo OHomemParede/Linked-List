@@ -1,7 +1,8 @@
 #ifndef LIST_CONTROL_H
 #define LIST_CONTROL_H
 
-#include "List_Core.h"
+#include "core.h"
+
 
 /**
  * Take a vector and returns a List with its contents.
@@ -54,5 +55,20 @@ List* List_copy(List* k);
  *  free() an entire list.
  */
 void List_free(List* k);
+
+
+/**
+ * Find the first occurrence of a specific value `n` in list k.
+ * if success return node's address, else return NULL
+ */ 
+List* List_find(CONTENT_TYPE n, List* k);
+
+
+/**
+ *  Implementation of the binary search algorithm.
+ *  List ´k´ must be sorted by ascending order.
+ *  if success return node's address, else return NULL
+ */
+List* List_binarySearch(CONTENT_TYPE n, List* k);
 
 #endif
