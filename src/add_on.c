@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "../include/Core.h"
 #include "../include/add_on.h"
@@ -135,10 +134,7 @@ List* List_binarySearch(CONTENT_TYPE n, List* k){
         if(k->content == n)
             return k;
         
-        else if(max <= min)
-            return NULL;
-        
-        if(max == min)
+        else if(max == min)
             return NULL;
         
         if(n > k->content){
