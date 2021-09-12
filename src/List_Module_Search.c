@@ -2,7 +2,7 @@
 #include "../include/List_Module_Search.h"
 
 
-List *List_find(CONTENT_TYPE n, List *k){
+List* List_find(CONTENT_TYPE n, List* k){
     while(k != _NULL_){
         if(k->content == n)
             return k;

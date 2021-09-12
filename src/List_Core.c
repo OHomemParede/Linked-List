@@ -3,8 +3,8 @@
 #include "../include/List_Core.h"
 
 
-List *List_init(CONTENT_TYPE n){
-    List *cell;
+List* List_init(CONTENT_TYPE n){
+    List* cell;
     cell = malloc(sizeof(List));
     cell->content = n;
     cell->next = _NULL_; 
@@ -12,18 +12,18 @@ List *List_init(CONTENT_TYPE n){
 }
 
 
-List *List_append(CONTENT_TYPE n, List *node){
-    List *cell;
+List* List_append(CONTENT_TYPE n, List* node){
+    List* cell;
     cell = List_init(n);
     cell->next = node;
     return cell;
 }
 
 
-List *List_remove(List *node, List *k){
-    List *head = k;
+List* List_remove(List* node, List* k){
+    List* head = k;
     if(k == node){
-        List *p;
+        List* p;
         p = k->next;
         free(node);
         return p;
@@ -42,12 +42,12 @@ List *List_remove(List *node, List *k){
 }
 
 
-void List_update(CONTENT_TYPE n, List *node){
+void List_update(CONTENT_TYPE n, List* node){
     node->content = n;
 }
 
 
-void List_print(List *node){
+void List_print(List* node){
     if(node == NULL)
         printf("* empty *\n");
     printf("[");
