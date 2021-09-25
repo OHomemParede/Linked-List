@@ -81,7 +81,7 @@ short List_comparison(List* a, List* b){
 
 
 List* List_copy(List* k){
-    List *copy = List_init(k->content);
+    List* copy = List_init(k->content);
     k = k->next;
     while(k != NULL){
         copy = List_append(k->content, copy);
@@ -92,7 +92,7 @@ List* List_copy(List* k){
 
 
 void List_free(List *k){
-    List *p;
+    List* p;
     while(k != NULL){
         p = k->next;
         free(k);
@@ -116,40 +116,34 @@ List* List_binarySearch(CONTENT_TYPE n, List* k){
     unsigned long min, max, walk, index;
     List* head = k;
     max = List_size(k);
-    max = max -1;       
+    max = max-1;       
     min = 0;            
 
-    // walk is not my middle point index, but how much do I have to 'walk' to get there.
-    walk = (max - min)/2;
-    while(k != NULL){
+    while(k->next != NULL || max <= min){
+        // walk is not my middle point index, but how much do I have to 'walk' to get there.
+        walk = (max - min)/2;
 
-        if(max < min)
-            return NULL;
-        
         // since index = 0, repet the loop `walk` times. --> k[min + walk] 
         for(index=0; index<walk; index++)
             k = k->next;
         
-        
         if(k->content == n)
             return k;
         
-        else if(max == min)
-            return NULL;
-        
-        if(n > k->content){
+        if(k->content < n){
             min = min + walk+1;
-            walk = (max - min)/2;
             k = k->next;
         }
                 
-        else if(n < k->content){
+        else if(k->content > n){
             max = min + walk-1;
             k = head;
             for(index=0; index<min; index++)
                 k = k->next;
-            walk = (max - min)/2;
         }
     }
+    if(k->content == n)
+        return k;
+
     return NULL;
 }
