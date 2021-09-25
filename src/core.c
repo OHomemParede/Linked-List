@@ -32,7 +32,7 @@ List* List_remove(List* node, List* k){
         if(k->next == node){
             k->next = node->next;
             free(node);
-            return k;
+            return head;
         }
         if(k->next == _NULL_)
             return head;
